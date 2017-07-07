@@ -1,7 +1,7 @@
 steps:
   - name: "gcr.io/cloud-builders/kubectl"
     env:
-    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=gcb'
     - 'REV=$REVISION_ID'
-    args: ["apply", "-f", "/development"]
+    args: ["apply", "--namespace=default", -f", "/development"]
