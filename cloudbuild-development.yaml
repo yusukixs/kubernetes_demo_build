@@ -1,5 +1,5 @@
 steps:
-  - name: "gcr.io/cloud-builders/kubectl:7fa1c1756d8bc963f1a389f4a6937dc71f08ada2"
+  - name: "gcr.io/cloud-builders/kubectl"
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=gcb'
