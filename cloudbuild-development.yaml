@@ -1,7 +1,8 @@
 steps:
-  - name: "gcr.io/cloud-builders/kubectl"
-    env:
-    - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=nodejs-cluster'
-    - 'REV=$REVISION_ID'
-    args: ["apply", "--namespace=default", -f", "/development"]
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      gcloud container clusters get-credentials nodejs-cluster --zone asia-northeast1-a
+      kubectl apply -f /development
