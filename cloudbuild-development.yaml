@@ -2,6 +2,6 @@ steps:
   - name: "gcr.io/cloud-builders/kubectl"
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=gcb'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=nodejs-cluster'
     - 'REV=$REVISION_ID'
     args: ["apply", "--namespace=default", -f", "/development"]
